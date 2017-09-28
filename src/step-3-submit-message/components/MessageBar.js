@@ -23,10 +23,17 @@ class MessageBar extends Component {
     }
   }
 
+  handleKeyPress = (target) => {
+    if(target.charCode==13 && this.state.message !== ''){
+        this.props.handleMessageSubmit(this.state.message);
+        this.setState({ message: '' });
+    }
+  }
+
   render() {
     return (
       <div style={{display: 'flex', padding: 10}}>
-        <input value={this.state.message} onChange={this.handleChange} placeholder="Votre message" type="text" style={inputStyle} />
+        <input value={this.state.message} onChange={this.handleChange} onKeyPress={this.handleKeyPress} placeholder="Votre message" type="text" style={inputStyle} />
         <br />
         <button onClick={this.handleSubmit} style={buttonStyle}>Envoyer</button>
       </div>
