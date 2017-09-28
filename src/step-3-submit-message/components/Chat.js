@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import MessageList from './MessageList';
 import MessageBar from "./MessageBar";
+import { connect } from 'react-redux';
 
 const chatStyle = {borderRadius: 10, fontFamily: 'Montserrat', width: 400, backgroundColor: '#A2DED0', padding: 10, display: 'flex', flexDirection: 'column'};
 
@@ -8,7 +9,6 @@ class Chat extends Component {
   constructor(props) {
     super(props);
     this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
-
     this.state = {messages: []};
   }
 

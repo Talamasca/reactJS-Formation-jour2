@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-
+import { connect } from 'react-redux'
+import { addMessage } from './../actions/messages';
 
 const inputStyle = {borderRadius: 10, border: 'none', fontSize: 16, padding: 10, marginRight: 10, flexGrow: 1};
 const buttonStyle = {borderRadius: 10, cursor: 'pointer', fontSize: 20, color: '#336E7B', fontWeight: 'bold', padding: 10, flexGrow: 1, border: '3px solid #336E7B', backgroundColor: 'transparent'};
@@ -18,14 +19,16 @@ class MessageBar extends Component {
 
   handleSubmit = () => {
     if (this.state.message !== '') {
-      this.props.handleMessageSubmit(this.state.message);
+      //this.props.handleMessageSubmit(this.state.message);
+      this.props.onAddMessage(this.state.message);
       this.setState({ message: '' });
     }
   }
 
   handleKeyPress = (target) => {
     if(target.charCode==13 && this.state.message !== ''){
-        this.props.handleMessageSubmit(this.state.message);
+        //this.props.handleMessageSubmit(this.state.message);
+        this.props.onAddMessage(this.state.message);
         this.setState({ message: '' });
     }
   }
@@ -45,4 +48,14 @@ MessageBar.propTypes = {
   handleMessageSubmit: PropTypes.func.isRequired,
 };
 
-export default MessageBar;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAddMessage: (message, username) => {
+      dispatch(addMessage(message, username))
+    }
+  }
+};
+
+const connectComponent = connect(null, mapDispatchToProps);
+
+export default connectComponent(MessageBar);
