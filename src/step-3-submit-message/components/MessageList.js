@@ -1,6 +1,5 @@
 import React from 'react';
 import MessageItem from './MessageItem';
-import {connect} from 'react-redux';
 
 const MessageList = ({messages}) => {
   return (<ul style={{borderColor: 'grey', padding: 10, listStyle: 'none'}}>
@@ -11,12 +10,4 @@ const MessageList = ({messages}) => {
   </ul>)
 }
 
-const mapStateToProps = (state) => {
-  return {
-    messages: state.message.messages
-  }
-};
-
-const connectComponent = connect(mapStateToProps);
-
-export default connectComponent(MessageList);
+export default MessageList;

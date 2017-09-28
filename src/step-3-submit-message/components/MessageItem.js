@@ -1,7 +1,6 @@
 import React from 'react';
 import { Emojione } from 'react-emoji-render';
 import { removeMessage } from './../actions/messages';
-import {connect} from 'react-redux';
 
 const MessageItem = ({message, onRemoveMessage, index}) => {
   return (
@@ -21,4 +20,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(null, mapDispatchToProps)(MessageItem);
+export default MessageItem;
