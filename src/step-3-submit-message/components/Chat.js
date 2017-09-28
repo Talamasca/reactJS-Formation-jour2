@@ -11,7 +11,7 @@ class Chat extends Component {
     return (
       <div style={chatStyle}>
         <div style={{paddingLeft: 10, paddingTop: 10, fontSize: 30}}>👅 Joli</div>
-        <MessageList messages={this.props.messages} />
+        <MessageList messages={this.props.messages}  />
         <MessageBar onAddMessage={this.props.onAddMessage} />
       </div>
     )
