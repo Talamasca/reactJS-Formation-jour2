@@ -1,0 +1,36 @@
+{
+  "name": "react-training-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:shinework/react-training-project.git",
+  "author": "shinework <badrien@jolicode.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "export NODE_ENV=production && webpack --progress --profile --colors",
+    "start": "webpack-dev-server --open"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "babel-loader": "^7.0.0",
+    "firebase": "^3.9.0",
+    "prop-types": "^15.5.8",
+    "react": "^16.0.0",
+    "react-color": "^2.11.7",
+    "react-dom": "^16.0.0",
+    "react-emoji-render": "^0.4.2",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-persist": "^4.8.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
